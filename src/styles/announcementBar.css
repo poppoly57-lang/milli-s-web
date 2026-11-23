@@ -1,0 +1,28 @@
+.announcement-bar {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 1rem;
+  background-color: var(--color-cocoa);
+  color: var(--color-ivory);
+  text-align: center;
+}
+
+.announcement-bar p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@media (max-width: 30rem) {
+  .announcement-bar {
+    min-height: 36px;
+    padding-inline: 1.125rem;
+  }
+
+  .announcement-bar p {
+    font-size: 10px;
+  }
+}

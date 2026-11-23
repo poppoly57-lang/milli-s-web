@@ -1,0 +1,222 @@
+.shopping-experience {
+  width: 100%;
+  padding: clamp(4rem, 7.5vw, 7rem) clamp(1.25rem, 5vw, 4.5rem);
+  background-color: var(--color-cocoa);
+  color: var(--color-ivory);
+}
+
+.shopping-experience__inner {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+}
+
+.shopping-experience__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.shopping-experience__intro {
+  max-width: 46rem;
+}
+
+.shopping-experience__eyebrow {
+  margin: 0 0 1rem;
+  color: var(--color-blush);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+}
+
+.shopping-experience__heading {
+  margin: 0;
+  color: var(--color-ivory);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+
+.shopping-experience__support {
+  max-width: 19rem;
+  margin: 0 0 0.35rem;
+  color: rgb(248 245 240 / 78%);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.shopping-experience__highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgb(248 245 240 / 24%);
+}
+
+.experience-highlight {
+  min-width: 0;
+  padding: 1.8rem clamp(1.25rem, 3vw, 2.75rem) 0;
+  transition: background-color 260ms ease;
+}
+
+.experience-highlight:first-child {
+  padding-left: 0;
+}
+
+.experience-highlight + .experience-highlight {
+  border-left: 1px solid rgb(248 245 240 / 24%);
+}
+
+.experience-highlight__marker {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+  color: var(--color-blush);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  transition: color 260ms ease;
+}
+
+.experience-highlight__marker::after {
+  width: 2rem;
+  height: 1px;
+  background-color: currentColor;
+  content: '';
+  transform-origin: left center;
+  transition: transform 260ms ease;
+}
+
+.experience-highlight__title {
+  max-width: 18rem;
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1.55;
+}
+
+.experience-highlight__description {
+  max-width: 21rem;
+  margin: 0.65rem 0 0;
+  color: rgb(248 245 240 / 74%);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-highlight:hover .experience-highlight__marker {
+    color: var(--color-rose);
+  }
+
+  .experience-highlight:hover .experience-highlight__marker::after {
+    transform: scaleX(1.35);
+  }
+}
+
+@media (max-width: 58rem) {
+  .shopping-experience__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shopping-experience__support {
+    max-width: 32rem;
+    margin: 0;
+  }
+
+  .shopping-experience__highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-highlight {
+    padding: 1.5rem 1.5rem 1.75rem 0;
+  }
+
+  .experience-highlight:first-child {
+    border-bottom: 1px solid rgb(248 245 240 / 24%);
+  }
+
+  .experience-highlight + .experience-highlight {
+    padding-right: 0;
+    padding-left: 1.5rem;
+  }
+
+  .experience-highlight:nth-child(2) {
+    border-bottom: 1px solid rgb(248 245 240 / 24%);
+  }
+
+  .experience-highlight:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 38rem) {
+  .shopping-experience {
+    padding: 3.5rem 1.25rem 3.75rem;
+  }
+
+  .shopping-experience__header {
+    gap: 0.85rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .shopping-experience__eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.67rem;
+  }
+
+  .shopping-experience__heading {
+    font-size: clamp(1.9rem, 8vw, 2.55rem);
+  }
+
+  .shopping-experience__support {
+    font-size: 0.92rem;
+  }
+
+  .shopping-experience__highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .experience-highlight,
+  .experience-highlight:first-child,
+  .experience-highlight + .experience-highlight,
+  .experience-highlight:nth-child(3) {
+    padding: 1.35rem 0 1.45rem;
+    border-left: 0;
+  }
+
+  .experience-highlight + .experience-highlight {
+    border-top: 1px solid rgb(248 245 240 / 24%);
+  }
+
+  .experience-highlight__marker {
+    margin-bottom: 1rem;
+  }
+
+  .experience-highlight__title {
+    max-width: 21rem;
+    font-size: 0.8rem;
+  }
+
+  .experience-highlight__description {
+    max-width: 30rem;
+    margin-top: 0.45rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-highlight,
+  .experience-highlight__marker,
+  .experience-highlight__marker::after {
+    transition: none;
+  }
+}

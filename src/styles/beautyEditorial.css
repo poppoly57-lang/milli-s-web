@@ -1,0 +1,158 @@
+.beauty-editorial {
+  width: 100%;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4.5rem);
+  background: var(--color-blush);
+}
+
+.beauty-editorial__inner {
+  display: grid;
+  width: min(100%, var(--content-width));
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+  margin-inline: auto;
+}
+
+.beauty-editorial__copy {
+  max-width: 35rem;
+  padding-block: 2rem;
+}
+
+.beauty-editorial__eyebrow {
+  margin: 0 0 1.1rem;
+  color: var(--color-rose);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+}
+
+.beauty-editorial__heading {
+  margin: 0;
+  color: var(--color-cocoa);
+  font-size: clamp(2.45rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.beauty-editorial__support {
+  max-width: 31rem;
+  margin: 1.4rem 0 2rem;
+  color: var(--color-cocoa);
+  font-size: clamp(1rem, 1.3vw, 1.14rem);
+  line-height: 1.65;
+}
+
+.beauty-editorial__cta {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1.35rem;
+  background: var(--color-cocoa);
+  color: var(--color-ivory);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.beauty-editorial__cta svg {
+  transition: transform 220ms ease;
+}
+
+.beauty-editorial__cta:focus-visible {
+  outline: 2px solid var(--color-cocoa);
+  outline-offset: 4px;
+}
+
+.beauty-editorial__image-frame {
+  width: 100%;
+  aspect-ratio: 1.08 / 1;
+  overflow: hidden;
+  background: var(--color-ivory);
+}
+
+.beauty-editorial__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 61% 48%;
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .beauty-editorial__cta:hover {
+    background: var(--color-rose);
+    color: var(--color-white);
+  }
+
+  .beauty-editorial__cta:hover svg {
+    transform: translateX(3px);
+  }
+
+  .beauty-editorial__image-frame:hover .beauty-editorial__image {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 58rem) {
+  .beauty-editorial__inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(1.75rem, 5vw, 3rem);
+  }
+
+  .beauty-editorial__heading {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+}
+
+@media (max-width: 42rem) {
+  .beauty-editorial {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .beauty-editorial__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 1.7rem;
+  }
+
+  .beauty-editorial__copy {
+    max-width: none;
+    padding-block: 0;
+  }
+
+  .beauty-editorial__eyebrow {
+    margin-bottom: 0.8rem;
+  }
+
+  .beauty-editorial__heading {
+    font-size: clamp(2.25rem, 9vw, 3.3rem);
+  }
+
+  .beauty-editorial__support {
+    margin-block: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .beauty-editorial__image-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .beauty-editorial__image {
+    object-position: 61% 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beauty-editorial__cta,
+  .beauty-editorial__cta svg,
+  .beauty-editorial__image {
+    transition: none;
+  }
+}

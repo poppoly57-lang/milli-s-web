@@ -1,0 +1,195 @@
+.beauty-routine-edit {
+  width: 100%;
+  padding: clamp(3.5rem, 7vw, 6.5rem) clamp(1.25rem, 5vw, 4.5rem);
+  background-color: var(--color-ivory);
+}
+
+.beauty-routine-edit__inner {
+  display: grid;
+  width: min(100%, var(--content-width));
+  grid-template-columns: minmax(0, 1.16fr) minmax(20rem, 0.84fr);
+  align-items: stretch;
+  margin-inline: auto;
+}
+
+.beauty-routine-edit__image-frame {
+  position: relative;
+  min-width: 0;
+  min-height: 34rem;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--color-blush);
+}
+
+.beauty-routine-edit__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 34rem;
+  object-fit: cover;
+  object-position: center 52%;
+  transition: transform 650ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.beauty-routine-edit__image-label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  padding: 0.7rem 0.85rem;
+  border-left: 1px solid var(--color-gold);
+  background-color: rgb(75 51 44 / 84%);
+  color: var(--color-ivory);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+}
+
+.beauty-routine-edit__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(2.5rem, 5.2vw, 5.5rem);
+  background-color: var(--color-blush);
+}
+
+.beauty-routine-edit__eyebrow {
+  margin: 0 0 1.15rem;
+  color: var(--color-rose);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1.45;
+}
+
+.beauty-routine-edit__heading {
+  max-width: 25rem;
+  margin: 0;
+  color: var(--color-cocoa);
+  font-size: clamp(2.4rem, 4.1vw, 4.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.beauty-routine-edit__support {
+  max-width: 24rem;
+  margin: 1.35rem 0 2rem;
+  color: var(--color-cocoa);
+  font-size: 1rem;
+  line-height: 1.75;
+  opacity: 0.82;
+}
+
+.beauty-routine-edit__cta {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.85rem;
+  padding-block: 0.4rem;
+  border-bottom: 1px solid var(--color-rose);
+  color: var(--color-cocoa);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  transition:
+    color 260ms ease,
+    border-color 260ms ease;
+}
+
+.beauty-routine-edit__cta svg {
+  transition: transform 260ms ease;
+}
+
+.beauty-routine-edit__cta:focus-visible {
+  outline: 2px solid var(--color-cocoa);
+  outline-offset: 5px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .beauty-routine-edit__cta:hover {
+    border-color: var(--color-cocoa);
+    color: var(--color-rose);
+  }
+
+  .beauty-routine-edit__cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  .beauty-routine-edit__image-frame:hover .beauty-routine-edit__image {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 62rem) {
+  .beauty-routine-edit__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  }
+
+  .beauty-routine-edit__image-frame,
+  .beauty-routine-edit__image {
+    min-height: 31rem;
+  }
+
+  .beauty-routine-edit__copy {
+    padding: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .beauty-routine-edit__heading {
+    font-size: clamp(2.2rem, 4.8vw, 3.5rem);
+  }
+}
+
+@media (max-width: 44rem) {
+  .beauty-routine-edit {
+    padding: 3.5rem 1rem;
+  }
+
+  .beauty-routine-edit__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .beauty-routine-edit__image-frame,
+  .beauty-routine-edit__image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .beauty-routine-edit__image {
+    object-position: center 48%;
+  }
+
+  .beauty-routine-edit__image-label {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .beauty-routine-edit__copy {
+    padding: 2.25rem clamp(1.5rem, 7vw, 2.75rem) 2.5rem;
+  }
+
+  .beauty-routine-edit__eyebrow {
+    margin-bottom: 0.8rem;
+  }
+
+  .beauty-routine-edit__heading {
+    max-width: 22rem;
+    font-size: clamp(2.1rem, 8.5vw, 3rem);
+  }
+
+  .beauty-routine-edit__support {
+    margin-block: 1rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beauty-routine-edit__image,
+  .beauty-routine-edit__cta,
+  .beauty-routine-edit__cta svg {
+    transition: none;
+  }
+}
